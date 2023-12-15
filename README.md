@@ -21,7 +21,7 @@ Arguments :
 Exemple : [544,567,144,17]
 
 
-La requete à envoyer  au service se décompose en  http://[***adresse du service***]?type= [***Le Type de Tri***] t= [***Le Tableau à trier entouré de crochets***] 
+La requete à envoyer  au service se décompose en  http://[***adresse du service***]?type= [***Le Type de Tri***] &t= [***Le Tableau à trier entouré de crochets***] 
 
 
 
