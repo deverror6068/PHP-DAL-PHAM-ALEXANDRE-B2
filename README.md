@@ -1,4 +1,5 @@
 # Depot du DAL PHP de PHAM ALEXANDRE
+⚠️ Merci de bien lire le manuel d'installation pour un mise en route du DAL sans emcombre 
 ## A Propos
 Le dépot  contient les  fichier pour installer  un DAL  qui permet de  mettre en place un service web , service web qui  permet de trier un tableau  (tri à bulle ou tri rapide) donné par un utilisateur dans l'url du service web et qui renvoie le tableau trié à l'utilisateur
 ## Syntaxe de la requete 
