@@ -4,8 +4,10 @@ Le dépot  contient les  fichier pour installer  un DAL  qui permet de  mettre e
 ## Syntaxe de la requete 
 Arguments : 
 méthode de tri  disponibles 
+/
 • `BubbleSort`
-• `QuickSort`
+• `QuickSort
+/
 le tableau à trier : 
 exemple : [544,567,144,17]
 
