@@ -1,5 +1,7 @@
 # Depot du DAL PHP de PHAM ALEXANDRE
-⚠️ Merci de bien lire le manuel d'installation pour un mise en route du DAL sans emcombre 
+⚠️ • Merci de bien lire le manuel d'installation pour un mise en route du DAL sans emcombre  
+⚠️ • Le code fonctionne en ***PHP 8.1**** , le code ***ne fonctionnera pas*** à des version inférieures à PHP 7  et il n'est pas garanti que celui fonctionne pour les autre         versions de PHP 
+
 ## A Propos
 Le dépot  contient les  fichier pour installer  un DAL  qui permet de  mettre en place un service web , service web qui  permet de trier un tableau  (tri à bulle ou tri rapide) donné par un utilisateur dans l'url du service web et qui renvoie le tableau trié à l'utilisateur
 ## Syntaxe de la requete 
