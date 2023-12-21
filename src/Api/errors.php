@@ -16,6 +16,20 @@ namespace namespace1;
 
     class RaiseErrors {
 
+        public static function raiseError429(){
+            $errormessage = array(
+                'Status' => 'Fail',
+                'Errorcode' => '429',
+                'Message' => " Erreur 429 Trop de Requetes Envoyées",
+
+            );
+            $encodedmessage = json_encode($errormessage);
+
+            header(HttpResponseRequest::get_MIME_Type("json")); // type MIME
+            header("HTTP/1.1 429 Too Many Request");
+            echo $encodedmessage;
+        }
+
 
       public  static function raiseError404(){ //peut etre utilisée dans des cas futur
             $errormessage = array(
@@ -63,7 +77,7 @@ namespace namespace1;
         }
 
         public static function raiseDBConnectionError($code){
-            switch ( $code ){
+            switch ( $code ){ //on recupère le code d'état sql (sqlstate)
                 case  1045 :
                     echo "bad credits ";
                     self::raiseBadCreditsError();
@@ -150,6 +164,10 @@ namespace namespace1;
 
     }
     class CustomError404 extends \Exception {
+
+    }
+
+    class  CustomError429 extends \Exception{
 
     }
 

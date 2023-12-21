@@ -5,8 +5,8 @@ require_once "LinkLib.php";
 require_once "dbhandler.php";
 
 
-ENDPOINT::routing();
-
+//ENDPOINT::routing();
+new \namespace1\ENDPOINT;
 
 
 
