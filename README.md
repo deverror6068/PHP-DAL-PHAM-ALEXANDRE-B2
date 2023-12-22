@@ -1,9 +1,9 @@
 # Depot du DAL PHP de PHAM ALEXANDRE
 ⚠️ • Merci de bien lire le manuel d'installation pour un mise en route du DAL sans emcombre  
-⚠️ • Le code fonctionne en ***PHP 8.1**** , le code ***ne fonctionnera pas*** à des version inférieures à PHP 7  et il n'est pas garanti que celui fonctionne pour les autre         versions de PHP 
+⚠️ • Le code fonctionne en ***PHP 8.1**** , le code ***ne fonctionnera pas*** sur des version inférieures à PHP 7  et il n'est pas garanti que celui fonctionne pour les autre         versions de PHP 
 
 ## A Propos
-Le dépot  contient les  fichier pour installer  un DAL  qui permet de  mettre en place un service web , service web qui  permet de trier un tableau  (tri à bulle ou tri rapide) donné par un utilisateur dans l'url du service web et qui renvoie le tableau trié à l'utilisateur
+Le dépot  contient les  fichier pour installer  un DAL  qui permet de  mettre en place un service web , service web qui  permet de trier un tableau  (tri à bulle ou tri rapide) donné par un utilisateur dans l'url du service web et qui renvoie le tableau trié à l'utilisateur au format json
 ## Syntaxe de la requete 
 Arguments : 
 
@@ -25,6 +25,7 @@ Exemple : [544,567,144,17]
 
 
 La requete à envoyer  au service se décompose en  http://[***adresse du service***]?type= [***Le Type de Tri***] &t= [***Le Tableau à trier entouré de crochets***] 
+Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format  des chiffre de type 0[chiffre] (05 par exemple) est   déconseillé
 
 
 
