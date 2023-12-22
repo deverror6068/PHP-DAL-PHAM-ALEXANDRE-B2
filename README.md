@@ -27,11 +27,13 @@ Exemple : [544,567,144,17]
 La requete à envoyer  au service se décompose en  http://[***adresse du service***]?type= [***Le Type de Tri***] &t= [***Le Tableau à trier entouré de crochets***] 
 
 
+exemple : http://localhost/Api/?type=QuickSort&t=[1,14,709,2152,48,1471,14]
+
+
+
 Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format  des chiffre de type 0[chiffre] (05 par exemple) est   déconseillée
 
 
-
-exemple : http://localhost/Api/?type=QuickSort&t=[1,14,709,2152,48,1471,14]
 
 
 
