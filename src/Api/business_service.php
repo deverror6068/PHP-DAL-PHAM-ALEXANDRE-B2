@@ -7,7 +7,7 @@ require_once "view/sendresponse.php";
 require_once "model/dbhandler.php";
 
 class BUSINESSLAYER{
- static function routing() // routing du serveur par switchcase
+    public static function  routing() // routing du serveur par switchcase
 {
 
 
@@ -22,10 +22,9 @@ class BUSINESSLAYER{
         }else{ //sinon on renvoie une erreur bad param
             throw new \Namespace1\CustomError400(); // gestion d'erreur personnalisée
         }
-        var_dump($_GET["t"]);
-        var_dump(json_decode(($_GET["t"])));
+
         $tabparam = json_decode(htmlspecialchars(($_GET["t"]))); //arguments du paramètre t
-    var_dump($tabparam);
+
 
         $url = $_SERVER['REQUEST_URI'];
 
@@ -79,11 +78,10 @@ class BUSINESSLAYER{
                 $data_source_name ['name']= "tableau";
                 $data_source_name ['host'] ="localhost:3306";
 
-
-                $dbassets =\DBHANDLER\DBHANDLER::dbConnect($treatedquery,$data_source_name);
-
+                $dbassets =\DBHANDLER\DBHANDLER::dbConnect($treatedquery,$data_source_name);//$test
 
 
+/*
 
                 $collumnstomodify['key0'] = 'tableau_trié';
                 $collumnstomodify['val0'] = '[12,50,74,180]';
@@ -93,7 +91,7 @@ class BUSINESSLAYER{
 
                 $filters['filterkey0'] = 'id_requete';
                 $filters['operator0'] = ' = ';
-                $filters['filtervalue0'] = "314";
+                $filters['filtervalue0'] = "257";
 
                 $dbassets["collumnstomodify"] = $collumnstomodify;
                 $dbassets["filters"] = $filters;
@@ -101,13 +99,14 @@ class BUSINESSLAYER{
 
                 $table ="tableau";
                 // \DBHANDLER\DBHANDLER::updateResults($dbassets,$table);
+      */
 
                 $bindingtab[]='Tableau_original';
                 $bindingtab[]='Tableau_trié';
                 $bindingtab[]='id_utilisateur';
                 $bindingtab[]='Type_Tri';
                 $dbassets['treatedquery'][] = "BubbleSort";
-                var_dump($dbassets['treatedquery']);
+
                 $dbassets['binding'] = $bindingtab ;
 
                 \DBHANDLER\DBHANDLER::insertResults($dbassets);
@@ -124,15 +123,17 @@ class BUSINESSLAYER{
 
                 $sendable_stream =\DBHANDLER\DBHANDLER::getResults($dbassets,$dbname,$whereval,$andvalue,$seltab,"Tableau_original",$andparams,$andparams);
 
-
-                $conditionbind = 325 ;
+/*
+                $conditionbind = 258 ;
                 $dbassets['conditionbind'] = $conditionbind ;
                 $dbassets["delcondition"] = "id_requete";
-                //  \DBHANDLER\DBHANDLER::deleteResults($dbassets,"tableau");
+               //   \DBHANDLER\DBHANDLER::deleteResults($dbassets,"tableau");
+
+            */
                 \Namespace1\SendResponse::sendResult( $sendable_stream[0],$sendable_stream[1]);
-                var_dump($dbassets);
+
                 $dbassets = null ;
-                var_dump($dbassets);
+
 
                 break;
             case "QuickSort" : // tri rapide
@@ -205,32 +206,26 @@ class BUSINESSLAYER{
 
 
     }
-    catch (TypeError $err)
+    catch (\TypeError $err)
     {
-        var_dump($err->getLine());
-        var_dump($err ->getMessage());
-        var_dump($err->getFile() );
+
         echo "echo erreur: le tableau contient des valeurs invalides ";
     }
     catch (\Namespace1\CustomTabSizeError $err){
-        var_dump($err->getLine());
-        var_dump($err ->getMessage());
+
         \Namespace1\RaiseErrors::raiseTabSizeError();
 
     }
     catch (\Namespace1\CustomError404 $err){   //levage d'erreur parsonalisé
-        var_dump($err->getLine());
-        var_dump($err ->getMessage());
+
         \Namespace1\RaiseErrors::raiseError404();
     }
     catch (\Namespace1\CustomError400 $err){
-        var_dump($err->getLine());
-        var_dump($err ->getMessage());
+
         \Namespace1\RaiseErrors::raiseError400();
     }
     catch (\Namespace1\CustomDBConnectionError $err){
-        var_dump($err->getLine());
-        var_dump($err ->getMessage());
+
         \Namespace1\RaiseErrors::raiseDBConnectionError( $GLOBALS['code']);
     }
 }

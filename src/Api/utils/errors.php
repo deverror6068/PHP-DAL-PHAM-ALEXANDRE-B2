@@ -16,6 +16,8 @@ namespace namespace1;
 
     class RaiseErrors {
 
+
+
         public static function raiseError429(){
             $errormessage = array(
                 'Status' => 'Fail',
@@ -38,10 +40,12 @@ namespace namespace1;
                 'Message' => " Erreur 404 Page Non Trouvee",
 
             );
-            $encodedmessage = json_encode($errormessage);
 
+
+            $encodedmessage = json_encode($errormessage);
             header(HttpResponseRequest::get_MIME_Type("json")); // type MIME
             header("HTTP/1.1 404 Not Found");
+
             echo $encodedmessage;
       }
       public static  function raiseError400(){// bad param  formatage et envoi avec le code html correspondant au "client"
@@ -76,7 +80,25 @@ namespace namespace1;
 
         }
 
+        public static  function raiseGenericServerError(){
+            $errormessage = array(
+                'Status' => 'Fail',
+                'Errorcode' => '500',
+                'Message' => "le serveur ne peux repondre a la requete suite a un evenement inattendu",
+
+            );
+            $encodedmessage = json_encode($errormessage);
+
+            header(HttpResponseRequest::get_MIME_Type("json")); // type MIME
+            header("HTTP/1.1 500 Internal Error");
+
+
+            echo $encodedmessage;
+
+    }
+
         public static function raiseDBConnectionError($code){
+
             switch ( $code ){ //on recupère le code d'état sql (sqlstate)
                 case  1045 :
                     echo "bad credits ";
@@ -96,7 +118,7 @@ namespace namespace1;
                     $errormessage = array(
                         'Status' => 'Fail',
                         'Errorcode' => '500',
-                        'Message' => "Erreur Interne : le serveur ne peux repondre a la requete suite à un evenement inattendu ",
+                        'Message' => "Erreur Interne : le serveur ne peux repondre a la requete suite a un evenement inattendu ",
 
                     );
                     $encodedmessage = json_encode($errormessage);
@@ -201,6 +223,10 @@ namespace namespace1;
     }
 
     class CustomUnreachableDBError extends \Exception{
+
+    }
+
+    class CustomGenericServerError extends  \Exception {
 
     }
 

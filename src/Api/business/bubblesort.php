@@ -2,7 +2,7 @@
 namespace  Namespace1;
 class SORT{
 //tri à bulle
-    static public function bubbleSort($tab2)
+    public static  function bubbleSort($tab2)
     {
 
         for($i=0; $i<count($tab2)-1; $i++)
@@ -21,7 +21,7 @@ class SORT{
     }
 
 
-    static function displayTab ($tab2)
+   public static function displayTab ($tab2)
     {
 
        // formatage tableau au format [val1,val2,val3]
@@ -37,7 +37,7 @@ class SORT{
         $str.="]";
         return $str;
     }
-    static  function sortTable($test)//initialisation du tri
+    public static  function sortTable($test)//initialisation du tri
     {
         $tab2 = $test;
 

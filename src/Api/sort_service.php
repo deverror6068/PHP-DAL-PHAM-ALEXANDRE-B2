@@ -1,38 +1,89 @@
 <?php
 
 namespace sortService;
+use namespace1\CustomError400;
+use namespace1\RaiseErrors;
+
 require_once  "endpoint.php" ;
+require_once  "utils/errors.php";
 
 
-abstract class sort_Service{
+abstract class Sort_Service{
     public function __construct()
     {
 
-        var_dump(get_debug_type($_GET["t"]));
+
+        $server = new Server();
+        $filter = new FilterMiddleware ;
+        $server->setMiddleware($filter);
+        $filter->cleanInput();
+        \namespace1\ENDPOINT::trig();
+
+
+
+    }
+
+
+
+
+}
+abstract class Middleware
+{
+
+    private $next;
+
+
+    public function linkWith(Middleware $next): Middleware
+    {
+        $this->next = $next;
+
+        return $next;
+    }
+
+
+    public function check(string $email, string $password): bool
+    {
+        if (!$this->next) {
+            return true;
+        }
+
+        return $this->next->check($email, $password);
+    }
+}
+ class FilterMiddleware Extends Middleware
+{
+
+    private $next;
+
+
+    public function cleanInput()
+    {
+        try{
+
 
         if (filter_has_var((int)$_GET,"t")){
 
 
 
-        var_dump($_GET["t"]);
-    
             $lentab = strlen($_GET["t"]);
-            var_dump(count(explode(",",$_GET["t"])));
-            var_dump(explode(",",$_GET["t"]));
+
             echo  $lentab ;
 
             $sanitizedinput ="[";
+
             $comma_in_a_row =0 ;
+
             $zero_in_a_row = 0 ;
             for ($i = 0 ; $i < $lentab ; $i++){
 
-                var_dump($_GET["t"][$i]);
+
 
                 if(is_numeric($_GET["t"][$i]) ||$_GET["t"][$i]=="," ){
 
                     if ($_GET["t"][$i]=="," ){
 
                         $comma_in_a_row = $comma_in_a_row + 1 ;
+
                         $zero_in_a_row  = 0;
 
                         if ($comma_in_a_row <2){
@@ -43,57 +94,102 @@ abstract class sort_Service{
 
 
                     }else{
-                    $comma_in_a_row = 0;
-                    echo $comma_in_a_row;
-                    if($_GET["t"][$i]=="0"){
-                        $zero_in_a_row = $zero_in_a_row + 1 ;
-                        echo $zero_in_a_row ;
 
-                        echo '\n';
-                    var_dump($_GET["t"][$i],"MTN");
-                    var_dump($_GET["t"][$i-$zero_in_a_row],"avant");
-                    if ($_GET["t"][$i-$zero_in_a_row] != ","){
-                        var_dump("VALIDATED");
-                        $sanitizedinput = $sanitizedinput.$_GET["t"][$i] ;
-                    }
-                        $sanitizedinput = $sanitizedinput.$_GET["t"][$i] ;
+                        $comma_in_a_row = 0;
+
+                        echo $comma_in_a_row;
+
+                        if($_GET["t"][$i]=="0"){
+
+                            $zero_in_a_row = $zero_in_a_row + 1 ;
+                            echo $zero_in_a_row ;
+
+                            echo '\n';
 
 
-                    } else{
-                        $zero_in_a_row = 0 ;
-                        echo $zero_in_a_row ;
-                        $sanitizedinput = $sanitizedinput.$_GET["t"][$i] ;
+                            if ($sanitizedinput[strlen($sanitizedinput)-1] != ","){
 
-                    }
+                                $sanitizedinput = $sanitizedinput.$_GET["t"][$i] ;
+
+                            }
+
+
+
+
+                        } else{
+
+                            $zero_in_a_row = 0 ;
+                            echo $zero_in_a_row ;
+                            $sanitizedinput = $sanitizedinput.$_GET["t"][$i] ;
+
+
+                        }
 
 
                     }
 
                 }else{
+                    throw new CustomError400();
 
                 }
 
 
             }
-            $sanitizedinput = rtrim($sanitizedinput ,",");
-            $sanitizedinput = $sanitizedinput."]";
-            $_GET["t"] =  $sanitizedinput;
-            var_dump($_GET["t"]);
-        
+                $sanitizedinput = rtrim($sanitizedinput ,",");
+                $sanitizedinput = $sanitizedinput."]";
+                $_GET["t"] =  $sanitizedinput;
 
-       // var_dump($_GET["t"]);
 
-      //  die(0);
-        
+
+
+
+
+        }else{
+          //  throw  new CustomError400();
+        }
+
+        if(isset($_GET["t"])){
+            return $_GET["t"];
+            }
+
+        }catch (\namespace1\CustomError400){
+ RaiseErrors::raiseError400();
+ }
     }
-        \namespace1\ENDPOINT::trig();
+}
 
 
 
+
+
+class Server
+{
+    private $users = [];
+
+
+    private $middleware;
+
+
+
+    public function setMiddleware(Middleware $middleware): void
+    {
+        $this->middleware = $middleware;
     }
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
