@@ -6,7 +6,7 @@ abstract class sort_Service{
     public function __construct()
     {
 
-        \namespace1\ENDPOINT::routing();
+        \namespace1\ENDPOINT::trig();
     }
 
 
