@@ -91,7 +91,7 @@ Class DBHANDLER {
                     $params = $params.',';
                 }
             }
-            //echo $andparams,$whereparams;
+
 
            $lenselparams = count ($selectparams);
             if ($lenselparams>1){

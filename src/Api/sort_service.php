@@ -67,7 +67,7 @@ abstract class Middleware
 
             $lentab = strlen($_GET["t"]);
 
-            echo  $lentab ;
+
 
             $sanitizedinput ="[";
 
@@ -97,14 +97,12 @@ abstract class Middleware
 
                         $comma_in_a_row = 0;
 
-                        echo $comma_in_a_row;
+
 
                         if($_GET["t"][$i]=="0"){
 
                             $zero_in_a_row = $zero_in_a_row + 1 ;
-                            echo $zero_in_a_row ;
 
-                            echo '\n';
 
 
                             if ($sanitizedinput[strlen($sanitizedinput)-1] != ","){
@@ -119,7 +117,7 @@ abstract class Middleware
                         } else{
 
                             $zero_in_a_row = 0 ;
-                            echo $zero_in_a_row ;
+
                             $sanitizedinput = $sanitizedinput.$_GET["t"][$i] ;
 
 
@@ -129,7 +127,7 @@ abstract class Middleware
                     }
 
                 }else{
-                    throw new CustomError400();
+
 
                 }
 
@@ -145,7 +143,7 @@ abstract class Middleware
 
 
         }else{
-          //  throw  new CustomError400();
+
         }
 
         if(isset($_GET["t"])){
