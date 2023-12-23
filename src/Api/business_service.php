@@ -22,6 +22,8 @@ class BUSINESSLAYER{
         }else{ //sinon on renvoie une erreur bad param
             throw new \Namespace1\CustomError400(); // gestion d'erreur personnalisée
         }
+        var_dump($_GET["t"]);
+        var_dump(json_decode(($_GET["t"])));
         $tabparam = json_decode(htmlspecialchars(($_GET["t"]))); //arguments du paramètre t
     var_dump($tabparam);
 
