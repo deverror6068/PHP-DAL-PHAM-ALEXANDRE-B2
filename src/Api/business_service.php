@@ -1,10 +1,10 @@
 <?php
 namespace namespace1 ;
-require_once "bubblesort.php"; // utilisation programme de tri , gestion d'erreur , réponses...
-require_once "quicksort.php";
-require_once "errors.php";
-require_once "sendresponse.php";
-require_once "dbhandler.php";
+require_once "business/bubblesort.php"; // utilisation programme de tri , gestion d'erreur , réponses...
+require_once "business/quicksort.php";
+require_once "utils/errors.php";
+require_once "view/sendresponse.php";
+require_once "model/dbhandler.php";
 
 class BUSINESSLAYER{
  static function routing() // routing du serveur par switchcase
@@ -16,14 +16,14 @@ class BUSINESSLAYER{
     {
 
         $args = $_GET;
-
-        if(isset($_GET["t"])){ // verifie l'existence du paramètre t
+        // verifie l'existence du paramètre t
+        if(isset($_GET["t"])){
             echo"";
         }else{ //sinon on renvoie une erreur bad param
             throw new \Namespace1\CustomError400(); // gestion d'erreur personnalisée
         }
         $tabparam = json_decode(htmlspecialchars(($_GET["t"]))); //arguments du paramètre t
-
+    var_dump($tabparam);
 
         $url = $_SERVER['REQUEST_URI'];
 
@@ -61,12 +61,15 @@ class BUSINESSLAYER{
                 $result =\Namespace1\SORT::sortTable($tabparam);
                 // formatage tableau au format [val1,val2,val3]
                 $sorttab ="[";
+
                 for ($i = 0; $i < $sizesorttab; $i++) {
+
                     if ($i!=$sizesorttab-2&&$result[$i]!="["&&$result[$i]!="]"){
                         $sorttab =  $sorttab.$result[$i]; // on récupère le tableau trié du programme de tri
                     }
 
                 }
+
                 $sorttab = $sorttab."]";
                 $treatedquery = [];
                 $treatedquery[] =  $_GET["t"];
@@ -126,8 +129,9 @@ class BUSINESSLAYER{
                 //  \DBHANDLER\DBHANDLER::deleteResults($dbassets,"tableau");
                 \Namespace1\SendResponse::sendResult( $sendable_stream[0],$sendable_stream[1]);
                 var_dump($dbassets);
-                // $dbassets = null ;
+                $dbassets = null ;
                 var_dump($dbassets);
+
                 break;
             case "QuickSort" : // tri rapide
                 if (!isset($tabparam)){ //le tableau n'existe pas dans les arguments rentrés
@@ -190,7 +194,7 @@ class BUSINESSLAYER{
 
                 \Namespace1\SendResponse::sendResult( $sendable_stream[0],$sendable_stream[1]); // on appelle la fonction d'encodage et de réponse
 
-                // $dbassets = null ;
+                 $dbassets = null ;
 
                 break;
             default : // arguments du paramètre type invalides
