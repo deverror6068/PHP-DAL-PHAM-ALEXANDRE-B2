@@ -48,6 +48,7 @@ Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format
 <img src="./assets/help-photos/step1.jpg" alt="Alt text" title="Optional title"  scale="0.5">
 </br>
 3. Déplacez  le dossier **Credential** présent dans **"assets"** dans  **C:\wamp64**
+</br>
 <img src="./assets/help-photos/step2.jpg" alt="Alt text" title="Optional title"  scale="0.5">
 </br>
 4. Lancez **WampServer**
