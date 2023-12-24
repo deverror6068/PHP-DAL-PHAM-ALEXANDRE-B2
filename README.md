@@ -50,12 +50,12 @@ Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format
 3. Déplacez  le dossier ***Credential*** présent dans ***"assets"*** dans  **C:\wamp64**
 <img src="./assets/help-photos/step2.jpg" alt="Alt text" title="Optional title"  scale="0.5">
 </br>
-4. Lancez **WampServer**
+4. Lancez ***WampServer***
 </br>
 5. Importez la base de donnée fournie  (du dossier asset/database)  dans votre ***PHPmyAdmin*** (assurez vous d'avoir les droits nécessaires pour creer une table et un un utilisateur) <img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title"  scale="0.5">
  <img src="./assets/help-photos/step5.jpg" alt="Alt text" title="Optional title"  scale="0.5">
   </br>
-6. Créez un utilisateur phpmyadmin  avec ***des droit limités*** (***SELECT, INSERT, UPDATE, DELETE, CREATE, FILE***)  qui possède les meme informations de connexion que  les credentials du  fichier **db.json** (présent dans le dossier ***Credentials***) <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
+6. Créez un utilisateur phpmyadmin  avec ***des droit limités*** ***(SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)***  qui possède les meme informations de connexion que  les credentials du  fichier **db.json** (présent dans le dossier ***Credentials***) <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
 
 7. Entrez  localhost/Api/?type=QuickSort&t=[***le tableau à trier***]  dans  l'url de votre navigateur pour utiliser le service 
 
