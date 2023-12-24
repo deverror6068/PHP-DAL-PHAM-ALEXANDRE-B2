@@ -47,10 +47,10 @@ Déplacez  le dossier ***Api*** dans le réperoire suivant **C:\wamp64\www**
 4.
 Déplacez  le dossier ***Credential*** présent dans ***"assets"*** dans  **C:\wamp64**
 5. 
-Importez la base de donnée fournie  (du dossier asset/database)  dans votre PHPmyAdmin (assurez vous d'avoir les droits nécessaires pour creer une table et un un utilisateur) <img src="./assets/help-photos/step1.png" alt="Alt text" title="Optional title"  scale="0.5">
+Importez la base de donnée fournie  (du dossier asset/database)  dans votre PHPmyAdmin (assurez vous d'avoir les droits nécessaires pour creer une table et un un utilisateur) <img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title"  scale="0.5">
 6.
 nommez la base  de données "tableau"  ou créez une nouvelle avec les meme caractèristiques que la base de donnée fournie    
 7.
-vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step2.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title" scale="0.5"> 
+vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
 
 
