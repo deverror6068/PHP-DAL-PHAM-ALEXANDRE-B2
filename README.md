@@ -57,6 +57,6 @@ Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format
   </br>
 6. Créez un utilisateur phpmyadmin  avec ***des droit limités*** (***SELECT, INSERT, UPDATE, DELETE, CREATE, FILE***)  qui possède les meme informations de connexion que  les credentials du  fichier **db.json** (présent dans le dossier ***Credentials***) <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
 
-7.Entrez  localhost/Api/?type=QuickSort&t=[***le tableau à trier***]  dans  l'url de votre navigateur pour utiliser le service 
+7. Entrez  localhost/Api/?type=QuickSort&t=[***le tableau à trier***]  dans  l'url de votre navigateur pour utiliser le service 
 
 
