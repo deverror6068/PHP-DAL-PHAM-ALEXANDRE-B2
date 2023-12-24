@@ -42,14 +42,15 @@ Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format
 1.Installez WampServer si ce n'est pas déja fait 
 
 2.Déplacez  le dossier ***Api*** dans le réperoire suivant **C:\wamp64\www**
+</br>
 <img src="./assets/help-photos/step1.jpg" alt="Alt text" title="Optional title"  scale="0.5">
-
+</br>
 3.Déplacez  le dossier ***Credential*** présent dans ***"assets"*** dans  **C:\wamp64**
 <img src="./assets/help-photos/step2.jpg" alt="Alt text" title="Optional title"  scale="0.5">
+</br>
 4. Importez la base de donnée fournie  (du dossier asset/database)  dans votre PHPmyAdmin (assurez vous d'avoir les droits nécessaires pour creer une table et un un utilisateur) <img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title"  scale="0.5">
  <img src="./assets/help-photos/step5.jpg" alt="Alt text" title="Optional title"  scale="0.5">
-  
-5.
-vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
+  </br>
+5.vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
 
 
