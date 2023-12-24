@@ -1,6 +1,7 @@
 # Depot du DAL PHP de PHAM ALEXANDRE
 ⚠️ • Merci de bien lire le manuel d'installation pour un mise en route du DAL sans emcombre  
 ⚠️ • Le code fonctionne en ***PHP 8.1*** , le code ***ne fonctionnera pas*** sur des version inférieures à PHP 7  et il n'est pas garanti que celui fonctionne pour les autre         versions de PHP 
+⚠️ •Le code a ***impérativement*** besoin de ***Wampserver*** pour fonctionner  veillez à l'avoir déja installé avant d'installer le code 
 
 ## A Propos
 Le dépot  contient les  fichier pour installer  un DAL  qui permet de  mettre en place un service web , service web qui  permet de trier un tableau  (tri à bulle ou tri rapide) donné par un utilisateur dans l'url du service web et qui renvoie le tableau trié à l'utilisateur au format json
@@ -38,7 +39,18 @@ Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format
 
 
 ## Installation 
-Vous devez deplacer le contenu du dossier **"src"** dans le réperoire suivant **C:\wamp64\www** et dans le contenu  du dossier "assets" vous devez importer la base de donnée fournie dans votre PHPmyAdmin<img src="./assets/help-photos/step1.png" alt="Alt text" title="Optional title"  scale="0.5"> 
-nommez la base  de données "tableau"  ou créez une nouvelle avec les meme caractèristiques que la base de donnée fournie    ensuite vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step2.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title" scale="0.5"> et vous devez aussi créer un dossier nommé **"Credentials"**  dans le répertoire suivant : **C:\wamp64** et placer le fichier **db.json** (présent dans le dossier **"assets"** ) dedans.
+1.Installez WampServer si ce n'est pas déja fait 
+
+2.
+Déplacez  le dossier ***Api*** dans le réperoire suivant **C:\wamp64\www**
+
+4.
+Déplacez  le dossier ***Credential*** présent dans ***"assets"*** dans  **C:\wamp64**
+5. 
+Importez la base de donnée fournie  (du dossier asset/database)  dans votre PHPmyAdmin (assurez vous d'avoir les droits nécessaires pour creer une table et un un utilisateur) <img src="./assets/help-photos/step1.png" alt="Alt text" title="Optional title"  scale="0.5">
+6.
+nommez la base  de données "tableau"  ou créez une nouvelle avec les meme caractèristiques que la base de donnée fournie    
+7.
+vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step2.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title" scale="0.5"> 
 
 
