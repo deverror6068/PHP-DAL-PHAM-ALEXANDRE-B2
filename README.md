@@ -47,7 +47,7 @@ Note : Les décimaux ne sont ***PAS*** pris en charge , l'utilisation du  format
 3.Déplacez  le dossier ***Credential*** présent dans ***"assets"*** dans  **C:\wamp64**
 <img src="./assets/help-photos/step2.jpg" alt="Alt text" title="Optional title"  scale="0.5">
 4. Importez la base de donnée fournie  (du dossier asset/database)  dans votre PHPmyAdmin (assurez vous d'avoir les droits nécessaires pour creer une table et un un utilisateur) <img src="./assets/help-photos/step3.png" alt="Alt text" title="Optional title"  scale="0.5">
- <img src="./assets/help-photos/step5.jng" alt="Alt text" title="Optional title"  scale="0.5">
+ <img src="./assets/help-photos/step5.jpg" alt="Alt text" title="Optional title"  scale="0.5">
   
 5.
 vous devez créer un utilisateur phpmyadmin  avec des droit limités (SELECT, INSERT, UPDATE, DELETE, CREATE, FILE)  qui possède les meme informations de connexion que sur le fichier **db.json** <img src="./assets/help-photos/step4.png" alt="importation" title="Importation de la base de données "   scale="0.5"><img src="./assets/help-photos/step6.png" alt="Alt text" title="Optional title" scale="0.5"> 
